@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="personal-page" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/m.png">
+    <title>1337 Pizzeria</title>
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+  </head>
+  <body style="background-image: url('img/background6.jpg'); background-repeat:no-repeat; background-size:100%;  bacgrkound-position: top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">1337 Pizzeria</a>
+        </div>
+        <div class="navbar-collapse collapse" id="main-menu">
+            <ul class="nav navbar-nav">
+                <li><a href="register.html">Register</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERE -->
+    <div class="row center-block" >
+        <!--<img  class="img-responsive center-block" src="img/background6.jpg" alt="work in progess">-->
+        <div class="jumbotron center-block col-md-4" style="background-color: rgba(255,255,255,0.8); padding-left:2%;left:20%;  color:black">
+            <h1 style="color:black">Pizza Tracker</h1>
+             <div id="result"> </div>
+             <div id="result2"> </div>
+             <form role="form" id="form">
+              <div class="form-group">
+                <label for="orderid">Order ID:</label>
+                <input type="text" class="form-control" id="orderid">
+              </div>
+
+              <div class="form-group">
+                <label for="ordertoken">Password:</label>
+                <input type="text" class="form-control" id="password">
+              </div>
+
+              <div class="form-group">
+                <label for="ordertoken">Order Token:</label>
+                <input type="text" class="form-control" id="ordertoken">
+              </div>
+
+
+              <button type="submit" class="btn btn-success">Tracking</button>
+             </form>
+        </div>
+    </div>
+
+      <!-- here -->
+    <script src="dist/js/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/form.js"></script>
+    <script>
+        $( "#form" ).submit(function( event ) {
+            event.preventDefault();
+
+            var data = {'token' : $("#ordertoken")[0].value,
+                        'orderid' : $("#orderid")[0].value,
+                        'password' : $("#password")[0].value
+                    };
+            $.post("", data, success);
+        });
+
+    </script>
+  </body>
+</html>
